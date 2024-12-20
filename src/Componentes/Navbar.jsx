@@ -1,38 +1,26 @@
-import { FaCartShopping } from "react-icons/fa6";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Cartwidget from './CartWidget';
+import { Link } from 'react-router';
 
-function Navbar() {
+function ColorSchemesExample() {
     return (
         <>
-            <header>
-                <div className='container'>
-                    <nav>
-                        <div className='logo'>
-                            <h2>Malek Regaleria</h2>
-                        </div>
-                        <ul className='nav-link'>
-                            <li>
-                                <a href="/inicio">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="/BazarYCocina">Bazar y cocina</a>
-                            </li>
-                            <li>
-                                <a href="/Ceramica">Ceramica</a>
-                            </li>
-                            <li>
-                                <a href="/Mates">Mates</a>
-                            </li>
-                        </ul>
-                        <section>
-                            <div className="icon">
-                                <a href="/Shop"><FaCartShopping /></a>
-                            </div>
-                        </section>
-                    </nav>
-                </div>
-            </header>
+            <Navbar bg="dark" data-bs-theme="dark">
+                <Container>
+                    <Navbar.Brand as={Link} to="/">Malek</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/category/beauty">Beauty</Nav.Link>
+                        <Nav.Link as={Link} to="/category/fragrances">Fragrances</Nav.Link>
+                        <Nav.Link as={Link} to="/category/furniture">Furniture</Nav.Link>
+                        <Nav.Link as={Link} to="/category/groceries">Groceries</Nav.Link>
+                    </Nav>
+                    <Cartwidget/>
+                </Container>
+            </Navbar>
         </>
     );
 }
 
-export default Navbar;
+export default ColorSchemesExample;

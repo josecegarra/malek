@@ -1,11 +1,21 @@
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router'
+import ItemList from './ItemList'
 
-function ItemListContainer () {
+function ItemListContainer() {
+    const [items, setItems] = useState([])
+    const { category } = useParams()
+    const allProducts = 'https://dummyjson.com/products'
+    const categoryProducts = `https://dummyjson.com/products/category/${category}`
+
+    useEffect(() => {
+        fetch(category ? categoryProducts : allProducts)
+            .then(res => res.json())
+            .then(res => setItems(res.products));
+    }, [category, categoryProducts])
+
     return (
-        <div className="container">
-            <div className="content">
-                <h2>Proximamente...</h2>
-            </div>
-        </div>
+        <ItemList items={items} />
     )
 }
 
