@@ -6,15 +6,13 @@ import { Link } from 'react-router';
 function Item ({ item }) {
     return (
         <Col key={item.id} className='mt-5'>
-        <Card style={{ width: '18rem' }}>
+        <Card border="dark" style={{ width: '20rem' }}>
             <Card.Img variant="top" src={item.thumbnail} />
             <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Title>Categoria: {item.category}</Card.Title>
-                <Card.Text>
-                    {item.description}
-                </Card.Text>
-                <Button variant="primary" as={Link} to={`/item/${item.id}`}>Ver detalle</Button>
+                <Card.Title><h3>{item.title}</h3></Card.Title>
+                <Card.Title className="text-uppercase"><h5>Category: {item.category}</h5> </Card.Title>
+                <Card.Text className="text-center">{item.description}</Card.Text>
+                <Button className="btn btn-outline-light" as={Link} to={`/item/${item.id}`}>Ver detalle</Button>
             </Card.Body>
         </Card>
     </Col>
