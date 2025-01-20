@@ -11,10 +11,9 @@ function ColorSchemesExample() {
                 <Container>
                     <Navbar.Brand as={Link} to="/">Malek</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/category/beauty">Beauty</Nav.Link>
-                        <Nav.Link as={Link} to="/category/fragrances">Fragrances</Nav.Link>
-                        <Nav.Link as={Link} to="/category/furniture">Furniture</Nav.Link>
-                        <Nav.Link as={Link} to="/category/groceries">Groceries</Nav.Link>
+                        <Nav.Link as={Link} to="/category/Tazas">Tazas</Nav.Link>
+                        <Nav.Link as={Link} to="/category/Mates">Mates</Nav.Link>
+                        <Nav.Link as={Link} to="/category/Botellas">Botellas</Nav.Link>
                     </Nav>
                     <Cartwidget/>
                 </Container>

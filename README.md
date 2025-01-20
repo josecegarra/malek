@@ -1,8 +1,35 @@
-# React + Vite
+# Ecommerce con React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de ecommerce desarrollada con **React.js** que permite a los usuarios explorar productos, ver los detalles de cada uno, añadirlos al carrito, visualizar el contenido del carrito, y finalizar una compra generando una orden con los datos del cliente.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Visualización de una lista de productos.
+- Acceso al detalle de cada producto.
+- Añadir productos al carrito.
+- Visualización de los productos en el carrito.
+- Filtros avanzados para productos (por categoría, precio, etc.).
+- Finalización de la compra ingresando datos del cliente.
+- Generación de una orden de compra.
+
+## Tecnologías y dependencias
+
+El proyecto utiliza las siguientes tecnologías y librerías:
+
+### Frontend
+- **React.js**: Biblioteca principal para la creación de interfaces de usuario.
+- **React DOM**: Manejo de la representación del DOM para React.
+- **React Router**: Navegación y gestión de rutas de la aplicación.
+- **React Icons**: Colección de íconos para React.
+- **Bootstrap**: Framework CSS para el diseño responsive.
+
+### Backend
+- **Firebase**: Usado como base de datos en tiempo real y para el almacenamiento de órdenes de compra.
+
+## Instalación
+
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/josecegarra/malek.git
