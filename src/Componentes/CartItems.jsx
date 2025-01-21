@@ -5,9 +5,11 @@ import { useContext } from 'react'
 import { CartContext } from '../context/cartContext'
 import { Link } from 'react-router';
 
-function CartItems ({ items }) {
+function CartItems({ items }) {
 
-    const { cart, getTotal } = useContext(CartContext)
+    const { getTotal } = useContext(CartContext)
+
+
 
     return (
         <div className="d-flex flex-column align-items-center mt-5">
@@ -18,12 +20,7 @@ function CartItems ({ items }) {
             </ListGroup>
             <hr />
             <strong >Total: ${getTotal()}</strong>
-            <Link to="/checkOut">
-                <Button variant='success' className='mt-3'>Finalizar Compra</Button>
-            </Link>
-                
-            
-            
+            <Button as={Link} to="/checkOut" variant='success' className='mt-3'>Finalizar Compra🎉</Button>
         </div>
     )
 }

@@ -1,13 +1,22 @@
 import { useState, useContext } from 'react';
 import { CartContext } from '../context/cartContext';
+import Swal from 'sweetalert2';
 
 function ItemCount ( { item } ) {
     const [count, setCount] = useState(0)
     const { addToCart } = useContext(CartContext)
 
     const handleAdd = () => {
-        setCount(count + 1)
-    }
+        if (count < item.stock) {
+            setCount(count + 1);
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Stock insuficiente",
+                text: `Solo hay ${item.stock} unidades disponibles de ${item.title}.`,
+            });
+        }
+    };
 
     const handleSubtract = () => {
         setCount(count - 1)
@@ -18,7 +27,21 @@ function ItemCount ( { item } ) {
     }
 
     const handleAddToCart = () => {
-        addToCart({...item, qty: count})
+        if (count > item.stock) {
+            Swal.fire({
+                icon: "error",
+                title: "Stock insuficiente",
+                text: `Solo hay ${item.stock} unidades disponibles de ${item.name}.`,
+            });
+        } else if (count < 1) {
+            Swal.fire({
+                icon: "warning",
+                title: "Cantidad no válida",
+                text: "Por favor, selecciona una cantidad mayor a 0.",
+            });
+        } else {
+            addToCart({ ...item, qty: count });
+        }
     }
 
     return (
